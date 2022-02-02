@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import useStore from './store';
 import axios from 'axios';
-import data from './closed_questions.json';
+import data from '../public/closed_questions.json';
 
 function shuffle(array: any[]) {
   var i = array.length,
