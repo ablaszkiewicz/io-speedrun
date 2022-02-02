@@ -55,7 +55,10 @@ export const Exam = () => {
 
   const postScore = async () => {
     setIsLoading(true);
-    await axios.post('/postScore', { username: username, score: correctAnswers(), time: Date.now() - startTime! });
+    try {
+      await axios.post('/postScore', { username: username, score: correctAnswers(), time: Date.now() - startTime! });
+    } catch (error) {}
+
     setIsLoading(false);
     navigate('/result', { state: { questions: questions, time: Date.now() - startTime! } });
   };
