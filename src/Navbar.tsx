@@ -6,7 +6,7 @@ export const Navbar = () => {
   const navigate = useNavigate();
   const { colorMode, toggleColorMode } = useColorMode();
   return (
-    <Flex w='100%' position={'fixed'} p='5' backgroundColor={colorMode === 'dark' ? '#1a202c' : 'white'} shadow='lg'>
+    <Flex w='100%' position={'fixed'} p='5' backgroundColor={colorMode === 'dark' ? '#1a202c' : 'white'} shadow='xl'>
       <Button mx={2} onClick={() => navigate('/')}>
         Graj
       </Button>
