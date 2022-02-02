@@ -21,6 +21,7 @@ export const Scores = () => {
   };
   return (
     <Box p={6}>
+      <Center mb={6}>Drabina resetuje się o każdej parzystej godzinie</Center>
       <Table variant='simple'>
         <TableCaption>Drabina chwały</TableCaption>
         <Thead>
