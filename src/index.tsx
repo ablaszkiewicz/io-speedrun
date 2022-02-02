@@ -8,8 +8,8 @@ import create from 'zustand';
 import axios from 'axios';
 import { HashRouter } from 'react-router-dom';
 
-//axios.defaults.baseURL = 'http://localhost:2137';
-axios.defaults.baseURL = 'https://iospeedrun.bieda.it/';
+axios.defaults.baseURL = 'http://localhost:2137';
+//axios.defaults.baseURL = 'https://iospeedrun.bieda.it/';
 
 ReactDOM.render(
   <React.StrictMode>
