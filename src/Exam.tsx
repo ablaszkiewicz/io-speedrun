@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import useStore from './store';
 import axios from 'axios';
+import { data } from './data';
 
 function shuffle(array: any[]) {
   var i = array.length,
@@ -34,8 +35,6 @@ export const Exam = () => {
 
   const setupQuestions = async () => {
     setStartTime(Date.now());
-    const response = await fetch('closed_questions.json');
-    const data = await response.json();
     const questionsTemp: QuestionType[] = [];
     const numbers = shuffle(Array.from(Array(data.length).keys())).slice(0, 10);
     numbers.forEach((number) => {
