@@ -28,7 +28,7 @@ export const Results = () => {
   return (
     <>
       <Text m={5}>
-        Twój wynik: {correctAnswers()} / 10. Twój czas (ms): {state.time}
+        Twój wynik: {correctAnswers()} / 10. Twój czas (ms): {state.time}.
       </Text>
       {(state.questions as QuestionType[]).map((question, i) => (
         <ResultQuestion question={question} key={i} />
