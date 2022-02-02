@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import useStore from './store';
 import axios from 'axios';
-import data from '../public/closed_questions.json';
 
 function shuffle(array: any[]) {
   var i = array.length,
@@ -30,9 +29,13 @@ export const Exam = () => {
     if (username === null) {
       navigate('/username');
     }
+    setupQuestions();
+  }, []);
 
+  const setupQuestions = async () => {
     setStartTime(Date.now());
-
+    const response = await fetch('closed_questions.json');
+    const data = await response.json();
     const questionsTemp: QuestionType[] = [];
     const numbers = shuffle(Array.from(Array(data.length).keys())).slice(0, 10);
     numbers.forEach((number) => {
@@ -40,7 +43,7 @@ export const Exam = () => {
       const answers: AnswerType[] = [];
       console.log(questionBedra);
       let i = 0;
-      questionBedra.answers.forEach((answer) => {
+      questionBedra.answers.forEach((answer: string) => {
         answers.push({ value: answer, isCorrect: i == questionBedra.correctAnswer ? true : false });
         i++;
       });
@@ -49,7 +52,7 @@ export const Exam = () => {
       console.log(question);
     });
     setQuestions(questionsTemp);
-  }, []);
+  };
 
   const postScore = async () => {
     setIsLoading(true);
