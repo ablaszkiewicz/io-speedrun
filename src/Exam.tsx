@@ -1,4 +1,4 @@
-import { Button, Center } from '@chakra-ui/react';
+import { Alert, AlertIcon, Button, Center, Flex, Text } from '@chakra-ui/react';
 import { AnswerType, Question, QuestionType } from './Question';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
@@ -79,6 +79,14 @@ export const Exam = () => {
 
   return (
     <>
+      <Flex px={5}>
+        <Alert status='info'>
+          <AlertIcon />
+          Czas liczy się od momentu wejścia w tę zakładkę. Aby zresetować pytania i timer, wyjdź i wejdź ponownie do tej
+          zakładki.
+        </Alert>
+      </Flex>
+
       {questions && questions.map((question, i) => <Question question={question} key={i} />)}
 
       <Center m={'10'}>

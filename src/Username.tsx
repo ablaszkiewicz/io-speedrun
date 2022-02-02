@@ -5,6 +5,7 @@ import useStore from './store';
 import { useState } from 'react';
 
 export const Username = () => {
+  const navigate = useNavigate();
   const [usernameTemp, setUsernameTemp] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const changeUsername = useStore((state) => state.changeUsername);
@@ -16,6 +17,7 @@ export const Username = () => {
     setTimeout(() => {
       setIsLoading(false);
       changeUsername(usernameTemp);
+      navigate('/');
     }, 500);
   };
   return (
