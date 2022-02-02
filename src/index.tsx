@@ -6,14 +6,17 @@ import reportWebVitals from './reportWebVitals';
 import * as serviceWorker from './serviceWorker';
 import create from 'zustand';
 import axios from 'axios';
+import { HashRouter } from 'react-router-dom';
 
 //axios.defaults.baseURL = 'http://localhost:2137';
 axios.defaults.baseURL = 'https://iospeedrun.bieda.it/';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ColorModeScript />
-    <App />
+    <HashRouter basename='/'>
+      <ColorModeScript />
+      <App />
+    </HashRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

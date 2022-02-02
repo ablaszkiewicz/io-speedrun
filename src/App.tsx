@@ -11,18 +11,16 @@ import theme from './theme';
 export const App = () => (
   <ChakraProvider theme={theme}>
     <Box fontSize='xl'>
-      <BrowserRouter>
-        <Navbar />
-        <Text mb='5'>.</Text>
-        <Text mb='8'>.</Text>
+      <Navbar />
+      <Text mb='5'>.</Text>
+      <Text mb='8'>.</Text>
 
-        <Routes>
-          <Route index element={<Exam />} />
-          <Route path='/result' element={<Results />} />
-          <Route path='/scores' element={<Scores />} />
-          <Route path='/username' element={<Username />} />
-        </Routes>
-      </BrowserRouter>
+      <Routes>
+        <Route index element={<Exam />} />
+        <Route path='/result' element={<Results />} />
+        <Route path='/scores' element={<Scores />} />
+        <Route path='/username' element={<Username />} />
+      </Routes>
     </Box>
   </ChakraProvider>
 );
