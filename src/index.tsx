@@ -7,8 +7,8 @@ import * as serviceWorker from './serviceWorker';
 import create from 'zustand';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:2137';
-//axios.defaults.baseURL = 'http://testnginx.bieda.it/';
+//axios.defaults.baseURL = 'http://localhost:2137';
+axios.defaults.baseURL = 'https://iospeedrun.bieda.it/';
 
 ReactDOM.render(
   <React.StrictMode>

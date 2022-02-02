@@ -1,6 +1,6 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
+  "name": "io-speedrun",
+  "version": "0.2.0",
   "homepage": "https://ablaszkiewicz.github.io/io-speedrun",
   "private": true,
   "dependencies": {
