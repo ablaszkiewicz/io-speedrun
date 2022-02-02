@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/io-speedrun/static/js/main.dd7c9a17.js",
+    "main.js": "/io-speedrun/static/js/main.d4b3cd58.js",
     "static/js/377.0c1aced9.chunk.js": "/io-speedrun/static/js/377.0c1aced9.chunk.js",
     "index.html": "/io-speedrun/index.html",
-    "main.dd7c9a17.js.map": "/io-speedrun/static/js/main.dd7c9a17.js.map",
+    "main.d4b3cd58.js.map": "/io-speedrun/static/js/main.d4b3cd58.js.map",
     "377.0c1aced9.chunk.js.map": "/io-speedrun/static/js/377.0c1aced9.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.dd7c9a17.js"
+    "static/js/main.d4b3cd58.js"
   ]
 }
