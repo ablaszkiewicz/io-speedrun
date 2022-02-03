@@ -31,6 +31,9 @@ export const Exam = () => {
       navigate('/username');
     }
     setupQuestions();
+    try {
+      axios.post('/postStart', { username: username });
+    } catch (error) {}
   }, []);
 
   const setupQuestions = async () => {
@@ -40,7 +43,6 @@ export const Exam = () => {
     numbers.forEach((number) => {
       const questionBedra = data[number];
       const answers: AnswerType[] = [];
-      console.log(questionBedra);
       let i = 0;
       questionBedra.answers.forEach((answer: string) => {
         answers.push({ value: answer, isCorrect: i == questionBedra.correctAnswer ? true : false });
@@ -48,7 +50,6 @@ export const Exam = () => {
       });
       const question: QuestionType = { answers: answers, value: questionBedra.content };
       questionsTemp.push(question);
-      console.log(question);
     });
     setQuestions(questionsTemp);
   };
@@ -56,7 +57,7 @@ export const Exam = () => {
   const postScore = async () => {
     setIsLoading(true);
     try {
-      await axios.post('/postScore', { username: username, score: correctAnswers(), time: Date.now() - startTime! });
+      await axios.post('/postScore', { username: username, score: correctAnswers() });
     } catch (error) {}
 
     setIsLoading(false);
